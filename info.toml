@@ -1,0 +1,7 @@
+[meta]
+name = "Nadeo API Console"
+author = "Miss"
+category = "Developer"
+
+[script]
+dependencies = [ "NadeoServices" ]
