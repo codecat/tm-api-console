@@ -5,23 +5,499 @@
 		"method": "get",
 		"path": "/api/routes"
 	},
+
 	{
-		"name": "Map Records v2",
+		"name": "Client: Get Config",
 		"base": "core",
 		"method": "get",
-		"path": "/v2/mapRecords/",
+		"path": "/client/config"
+	},
+
+	{
+		"name": "Account: Get",
+		"base": "core",
+		"method": "get",
+		"path": "/accounts/{_myAccountId}"
+	},
+	{
+		"name": "Account: Get Client Config",
+		"base": "core",
+		"method": "get",
+		"path": "/accounts/{_myAccountId}/client/config"
+	},
+	{
+		"name": "Account: Get Client Signature",
+		"base": "core",
+		"method": "get",
+		"path": "/accounts/{_myAccountId}/client/signature",
 		"query": {
-			"accountIdList": "7398eeb6-9b4e-44b8-a7a1-a2149955ac70",
-			"mapId": "d2b8a048-209d-4cfa-b5a4-bc3e3cab3566"
+			"signature": "",
+			"publicKey": ""
 		}
 	},
 	{
-		"name": "Maps List",
+		"name": "Account: Get Client Plugins",
+		"base": "core",
+		"method": "get",
+		"path": "/accounts/{_myAccountId}/client/plugins"
+	},
+	{
+		"name": "Account: Get Client URLs",
+		"base": "core",
+		"method": "get",
+		"path": "/v2/accounts/{_myAccountId}/client/urls"
+	},
+	{
+		"name": "Account: Encrypted Packages: Get Key",
+		"base": "core",
+		"method": "get",
+		"path": "/accounts/{_myAccountId}/encryptedPackage/key"
+	},
+	{
+		"name": "Account: Encrypted Packages: Get List",
+		"base": "core",
+		"method": "get",
+		"path": "/accounts/{_myAccountId}/encryptedPackages/"
+	},
+	{
+		"name": "Account: Item Collections: Add Favorite",
+		"base": "core",
+		"method": "put",
+		"path": "/accounts/{_myAccountId}/itemCollections/favorites/00000000-0000-0000-0000-000000000000"
+	},
+	{
+		"name": "Account: Item Collections: Delete Favorite",
+		"base": "core",
+		"method": "delete",
+		"path": "/accounts/{_myAccountId}/itemCollections/favorites/00000000-0000-0000-0000-000000000000"
+	},
+	{
+		"name": "Account: Item Collections: Favorite List",
+		"base": "core",
+		"method": "get",
+		"path": "/accounts/{_myAccountId}/itemCollections/favorites/"
+	},
+	{
+		"name": "Account: Map Records: Get List v1",
+		"base": "core",
+		"method": "get",
+		"path": "/accounts/{_myAccountId}/mapRecords/",
+		"query": {
+			"offset": "0",
+			"limit": "25"
+		}
+	},
+	{
+		"name": "Account: Map Records: Get List v2",
+		"base": "core",
+		"method": "get",
+		"path": "/v2/accounts/{_myAccountId}/mapRecords/",
+		"query": {
+			"offset": "0",
+			"limit": "25",
+			"gameMode": "TimeAttack"
+		}
+	},
+	{
+		"name": "Account: Seasons: Get Playable List",
+		"base": "core",
+		"method": "get",
+		"path": "/accounts/{_myAccountId}/playableSeasons"
+	},
+	{
+		"name": "Account: Policies: Global Rules",
+		"base": "core",
+		"method": "get",
+		"path": "/accounts/{_myAccountId}/policies/global/rules/"
+	},
+	{
+		"name": "Account: Policies: Title Rules",
+		"base": "core",
+		"method": "get",
+		"path": "/accounts/{_myAccountId}/policies/titles/Trackmania/rules/"
+	},
+	{
+		"name": "Account: Policies: Encrypted Package Rules",
+		"base": "core",
+		"method": "get",
+		"path": "/accounts/{_myAccountId}/policies/encryptedPackages/e43ee055-9f2e-413f-a2cc-dc9054971d27/rules/"
+	},
+	{
+		"name": "Account: Policies: Club Rules",
+		"base": "core",
+		"method": "get",
+		"path": "/accounts/{_myAccountId}/policies/club/9/rules/"
+	},
+	{
+		"name": "Account: Subscriptions: Add v1",
+		"base": "core",
+		"method": "put",
+		"path": "/accounts/{_myAccountId}/subscriptions/Club",
+		"body": {
+			"subscriptionName": ""
+		}
+	},
+	{
+		"name": "Account: Subscriptions: Add v2",
+		"base": "core",
+		"method": "put",
+		"path": "/v2/accounts/{_myAccountId}/subscriptions/Club",
+		"body": {
+			"subscriptionName": ""
+		}
+	},
+	{
+		"name": "Account: Get Subscriptions List",
+		"base": "core",
+		"method": "get",
+		"path": "/v2/accounts/{_myAccountId}/subscriptions/"
+	},
+	{
+		"name": "Account: Set Presence",
+		"base": "core",
+		"method": "put",
+		"path": "/accounts/{_myAccountId}/presence"
+	},
+	{
+		"name": "Account: Delete Presence",
+		"base": "core",
+		"method": "delete",
+		"path": "/accounts/{_myAccountId}/presence"
+	},
+	{
+		"name": "Account: Get Prestige",
+		"base": "core",
+		"method": "get",
+		"path": "/accounts/{_myAccountId}/prestiges/current"
+	},
+	{
+		"name": "Account: Get Prestige List",
+		"base": "core",
+		"method": "get",
+		"path": "/accounts/{_myAccountId}/prestiges/"
+	},
+	{
+		"name": "Account: Get Current Prestige",
+		"base": "core",
+		"method": "get",
+		"path": "/accounts/{_myAccountId}/currentPrestige"
+	},
+	{
+		"name": "Account: Set Current Prestige",
+		"base": "core",
+		"method": "put",
+		"path": "/accounts/{_myAccountId}/currentPrestige",
+		"body": {
+			"prestigeId": "49ba789e-8f22-43bf-bfbc-062767ece0c9"
+		}
+	},
+	{
+		"name": "Account: Delete Current Prestige",
+		"base": "core",
+		"method": "delete",
+		"path": "/accounts/{_myAccountId}/currentPrestige"
+	},
+	{
+		"name": "Account: Profile Chunks: Get List",
+		"base": "core",
+		"method": "get",
+		"path": "/accounts/{_myAccountId}/profile/chunks/"
+	},
+
+	{
+		"name": "Title: Get Client Config",
+		"base": "core",
+		"method": "get",
+		"path": "/titles/Trackmania/client/config"
+	},
+
+	{
+		"name": "Client File: Get File",
+		"base": "core",
+		"method": "get",
+		"path": "/client/files/f97fe1e4-4942-420c-991d-c77619cfa028"
+	},
+	{
+		"name": "Client File: Get List",
+		"base": "core",
+		"method": "get",
+		"path": "/client/files/",
+		"query": {
+			"checksumList": "0000000000000000000000000000000000000000000000000000000000000000"
+		}
+	},
+
+	{
+		"name": "Client Updater: Get File v1",
+		"base": "core",
+		"method": "get",
+		"path": "/client/updaters/current"
+	},
+	{
+		"name": "Client Updater: Get File v2",
+		"base": "core",
+		"method": "get",
+		"path": "/v2/client/updaters/current"
+	},
+
+	{
+		"name": "Club: Get Club",
+		"base": "core",
+		"method": "get",
+		"path": "/clubs/9"
+	},
+	{
+		"name": "Club: Get List",
+		"base": "core",
+		"method": "get",
+		"path": "/clubs/",
+		"query": {
+			"clubIdList": "1,2,3,4,5,6,7,8,9"
+		}
+	},
+
+	{
+		"name": "Encrypted Packages: Get List",
+		"base": "core",
+		"method": "get",
+		"path": "/encryptedPackages/",
+		"query": {
+			"titleIdList": "Trackmania"
+		}
+	},
+	{
+		"name": "Encrypted Packages: Get Version List",
+		"base": "core",
+		"method": "get",
+		"path": "/encryptedPackages/versions/",
+		"query": {
+			"checksumList": "418164611623748A713B0B648874FB554530304246C8BD5A14EA6045075C0CFD"
+		}
+	},
+	{
+		"name": "Encrypted Packages: Get Version Crypt Key",
+		"base": "core",
+		"method": "get",
+		"path": "/encryptedPackages/versions/10ea03de-c4f1-47f4-85f0-60924decbd19/cryptKey/"
+	},
+	{
+		"name": "Encrypted Packages: Get Package Version List",
+		"base": "core",
+		"method": "get",
+		"path": "/encryptedPackages/e43ee055-9f2e-413f-a2cc-dc9054971d27/versions/"
+	},
+
+	{
+		"name": "Server Accounts: Get",
+		"base": "core",
+		"method": "get",
+		"path": "/servers/7fdba438-e535-41cb-a410-ca499d28e11c"
+	},
+	{
+		"name": "Server Accounts: Get List",
+		"base": "core",
+		"method": "get",
+		"path": "/accounts/{_myAccountId}/servers/"
+	},
+
+	{
+		"name": "Token: From NadeoServices",
+		"base": "core",
+		"method": "post",
+		"path": "/v2/authentication/token/nadeoservices",
+		"body": {
+			"audience": "NadeoLiveServices"
+		}
+	},
+	{
+		"name": "Token: Delegation Token From NadeoServices",
+		"base": "core",
+		"method": "post",
+		"path": "/v2/authentication/delegation-token/nadeoservices",
+		"body": {
+			"audience": "NadeoLiveServices",
+			"delegationFor": "NadeoServices",
+			"accountId": "{_myAccountId}"
+		}
+	},
+
+	{
+		"name": "Web Identities",
+		"base": "core",
+		"method": "get",
+		"path": "/webidentities/",
+		"query": {
+			"accountIdList": "{_myAccountId}"
+		}
+	},
+
+	{
+		"name": "Item Collections: Get Collection",
+		"base": "core",
+		"method": "get",
+		"path": "/itemCollections/dcaf2a47-5f2b-4ef2-b31f-e6e5886a6d00"
+	},
+	{
+		"name": "Item Collections: Get List",
+		"base": "core",
+		"method": "get",
+		"path": "/itemCollections/",
+		"query": {
+			"identifierList[0][name]": "APIConsoleTest",
+			"identifierList[0][type]": "Club",
+			"identifierList[0][typeUid]": "16"
+		}
+	},
+	{
+		"name": "Item Collections: Create Collection",
+		"base": "core",
+		"method": "post",
+		"path": "/itemCollections/",
+		"body": {
+			"itemCollectionDisplayName": "API Console Test",
+			"itemCollectionName": "APIConsoleTest",
+			"itemCollectionType": "Club",
+			"itemCollectionTypeUid": "16"
+		}
+	},
+	{
+		"name": "Item Collections: Update Collection",
+		"base": "core",
+		"method": "put",
+		"path": "/itemCollections/dcaf2a47-5f2b-4ef2-b31f-e6e5886a6d00",
+		"body": {
+			"itemCollectionDisplayName": "API Console Test 2"
+		}
+	},
+	{
+		"name": "Item Collections: Update Collection Activity",
+		"base": "core",
+		"method": "put",
+		"path": "/itemCollections/dcaf2a47-5f2b-4ef2-b31f-e6e5886a6d00/activity",
+		"body": {
+			"activityId": 2
+		}
+	},
+	{
+		"name": "Item Collections: Create Version",
+		"base": "core",
+		"method": "post",
+		"path": "/itemCollections/dcaf2a47-5f2b-4ef2-b31f-e6e5886a6d00/versions/",
+		"body": {
+			"checksum": "0000000000000000000000000000000000000000000000000000000000000000"
+		}
+	},
+	{
+		"name": "Item Collections: Get Version",
+		"base": "core",
+		"method": "get",
+		"path": "/itemCollections/dcaf2a47-5f2b-4ef2-b31f-e6e5886a6d00/versions/41d7bfd3-02bb-4ad7-8efb-df4c144fea91"
+	},
+	{
+		"name": "Item Collections: Get Version List",
+		"base": "core",
+		"method": "get",
+		"path": "/itemCollections/dcaf2a47-5f2b-4ef2-b31f-e6e5886a6d00/versions/",
+		"query": {
+			"checksumList": "0000000000000000000000000000000000000000000000000000000000000000"
+		}
+	},
+
+	{
+		"name": "Maps: Get Map",
+		"base": "core",
+		"method": "get",
+		"path": "/maps/0f9b1a73-0352-482d-b99c-3e52be3aa083"
+	},
+	{
+		"name": "Maps: Get Map List",
 		"base": "core",
 		"method": "get",
 		"path": "/maps/",
 		"query": {
-			"mapUidList": "yQ4ktCXu3SAxyRx9gar8hj7kVBb"
+			"mapUidList": "aaaaaaaaaaaaaaaaaaaaaaaaa"
 		}
+	},
+
+	{
+		"name": "Map Records: Get Record",
+		"base": "core",
+		"method": "get",
+		"path": "/mapRecords/0016e484-f215-4d94-bc98-d3f897262520"
+	},
+	{
+		"name": "Map Records: Get List v1",
+		"base": "core",
+		"method": "get",
+		"path": "/mapRecords/",
+		"query": {
+			"accountIdList": "{_myAccountId}",
+			"mapIdList": "d2b8a048-209d-4cfa-b5a4-bc3e3cab3566"
+		}
+	},
+	{
+		"name": "Map Records: Get List v2",
+		"base": "core",
+		"method": "get",
+		"path": "/v2/mapRecords/",
+		"query": {
+			"accountIdList": "{_myAccountId}",
+			"mapId": "d2b8a048-209d-4cfa-b5a4-bc3e3cab3566",
+			"gameMode": "TimeAttack"
+		}
+	},
+
+	{
+		"name": "Seasons: Get Season",
+		"base": "core",
+		"method": "get",
+		"path": "/seasons/000bf1b0-3bee-4a1b-9f2f-8f6d9a351363"
+	},
+	{
+		"name": "Seasons: Get Season List",
+		"base": "core",
+		"method": "get",
+		"path": "/seasons/",
+		"query": {
+			"seasonIdList": "000bf1b0-3bee-4a1b-9f2f-8f6d9a351363"
+		}
+	},
+
+	{
+		"name": "Policies: Get List",
+		"base": "core",
+		"method": "get",
+		"path": "/policies/",
+		"query": {
+			"offset": "0",
+			"limit": "25"
+		}
+	},
+
+	{
+		"name": "Prestiges: Get Player List",
+		"base": "core",
+		"method": "get",
+		"path": "/accounts/prestiges/currents/",
+		"query": {
+			"accountIdList": "{_myAccountId}"
+		}
+	},
+	{
+		"name": "Prestiges: Get List",
+		"base": "core",
+		"method": "get",
+		"path": "/prestiges/",
+		"query": {
+			"year": "2024",
+			"mode": "Ranked",
+			"scopeType": "Summer"
+		}
+	},
+	{
+		"name": "Prestiges: Get Settings",
+		"base": "core",
+		"method": "get",
+		"path": "/prestiges/settings"
 	}
 ]
