@@ -74,10 +74,16 @@ class RequestData
 	string ReplaceVariables(const string &in str)
 	{
 		string ret = str;
+
+		// Predefined variables
+		ret = ret.Replace("{_myAccountId}", NadeoServices::GetAccountID());
+
+		// Request-specific variables
 		for (uint i = 0; i < m_variables.Length; i++) {
 			auto item = m_variables[i];
 			ret = ret.Replace("{" + item.m_key + "}", item.m_value);
 		}
+
 		return ret;
 	}
 
