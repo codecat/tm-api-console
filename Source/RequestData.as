@@ -2,7 +2,8 @@ const array<string> g_contentTypes = {
 	"application/json",
 	"application/x-www-form-urlencoded",
 	"text/plain",
-	"text/xml"
+	"text/xml",
+	"multipart/form-data"
 };
 
 enum BaseUrl
