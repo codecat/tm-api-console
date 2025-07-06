@@ -16,7 +16,7 @@ class ResponseData
 		m_raw = req.String();
 
 		string contentType;
-		m_headers.Get("content-type", contentType);
+		m_headers.Get("Content-Type", contentType);
 		if (contentType == "application/json") {
 			m_pretty = Json::Write(req.Json(), true);
 		}
