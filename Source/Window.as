@@ -13,6 +13,7 @@ class ApiConsoleWindow
 	string m_saveRouteName = "";
 
 	bool m_waiting = false;
+	string m_error;
 
 	ApiConsoleWindow()
 	{
@@ -41,6 +42,9 @@ class ApiConsoleWindow
 			UI::Columns(2);
 			m_request.Render();
 			UI::NextColumn();
+			if (m_error != "") {
+				Controls::FrameDanger("Error: " + m_error);
+			}
 			m_response.Render();
 			UI::Columns(1);
 
@@ -224,9 +228,14 @@ class ApiConsoleWindow
 
 	void StartRequestAsync()
 	{
+		m_error = "";
 		m_waiting = true;
-		m_response = ResponseData();
-		m_response = m_request.DoAsync();
+		try {
+			m_response = ResponseData();
+			m_response = m_request.DoAsync();
+		} catch {
+			m_error = getExceptionInfo();
+		}
 		m_waiting = false;
 	}
 }
