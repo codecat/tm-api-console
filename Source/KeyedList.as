@@ -40,8 +40,8 @@ class KeyedList
 				}
 				UI::PopID();
 			}
-			UI::EndChild();
 		}
+		UI::EndChild();
 	}
 
 	void Clear()

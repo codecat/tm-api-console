@@ -42,8 +42,8 @@ class ResponseData
 					UI::Text("\\$f93" + key + "\\$z: " + value);
 				}
 				UI::PopFont();
-				UI::EndChild();
 			}
+			UI::EndChild();
 			UI::EndTabItem();
 		}
 
@@ -61,8 +61,8 @@ class ResponseData
 			} else {
 				if (UI::BeginChild("Container")) {
 					UI::TextWrapped(m_raw);
-					UI::EndChild();
 				}
+				UI::EndChild();
 			}
 			UI::PopFont();
 			UI::EndTabItem();
