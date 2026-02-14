@@ -65,6 +65,7 @@ class RequestData
 		switch (m_method) {
 			case Net::HttpMethod::Post:
 			case Net::HttpMethod::Put:
+			case Net::HttpMethod::Delete:
 			case Net::HttpMethod::Patch:
 				return true;
 		}
